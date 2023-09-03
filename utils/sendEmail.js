@@ -1,5 +1,5 @@
 const nodemailer = require("nodemailer");
-const { app_logo } = require("./b64Images");
+const { app_logo, app_logo_img } = require("./b64Images");
 
 const sampleSalutation = `Hello,`
 const sampleContent = `
@@ -47,6 +47,7 @@ const sendEmail = async (options) => {
       .header {
           display: flex;
           align-content: center;
+          align-items: center;
           justify-content: center;
           background-color: #a6448d;
           color: #ffffff;
@@ -60,7 +61,7 @@ const sendEmail = async (options) => {
           padding: 20px;
       }
   </style>
-  `
+  `;
 
   const html = options.html || `<!DOCTYPE html>
   <html>
@@ -70,7 +71,7 @@ const sendEmail = async (options) => {
   <body>
       <div class="container">
           <div class="header">
-              ${app_logo}<h1>Ridge Dental</h1>
+              ${app_logo_img}${app_logo}<h1>Ridge Dental</h1>
           </div>
           <div class="content">
               <h3>${options.salutation}</h3>
