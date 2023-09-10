@@ -76,18 +76,18 @@ app.use(errorHandler);
 //Set static folder
 app.use(express.static(path.join(__dirname, "public")));
 
-app.get("/", function (req, res) {
-    res.status(200).send("Ridge API Works!!!");
-});
-
-
-// app.get("/*", function (req, res) {
-//   res.sendFile(path.join(__dirname, "public/index.html"), function (err) {
-//     if (err) {
-//       res.status(500).send(err);
-//     }
-//   });
+// app.get("/", function (req, res) {
+//     res.status(200).send("Ridge API Works!!!");
 // });
+
+
+app.get("/*", function (req, res) {
+  res.sendFile(path.join(__dirname, "public/index.html"), function (err) {
+    if (err) {
+      res.status(500).send(err);
+    }
+  });
+});
 
 const PORT = process.env.PORT || 8000;
 const server = app.listen(
