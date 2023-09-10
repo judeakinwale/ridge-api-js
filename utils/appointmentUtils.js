@@ -9,10 +9,12 @@ exports.sendUserAppointmentEmail = async appointment => {
   <p>Kindly find the details of your appointment below:</p>
   <ul>  
       <li><strong>Service:</strong> ${appointment?.type}</li>
-      <li><strong>Date:</strong> ${appointment?.date?.toLocaleString()}</li>
+      <li><strong>Date:</strong> ${new Date(appointment?.date)?.toLocaleString()}</li>
   </ul>`;
   try {
-    await sendEmail({ email, subject, salutation, content });
+    const response = await sendEmail({ email, subject, salutation, content });
+    // console.log({response })
+    return [response];
   } catch (err) {
     console.log(err);
     throw new ErrorResponse(`Error Sending Appointment Mail: ${err.message}`, 500)
@@ -20,7 +22,7 @@ exports.sendUserAppointmentEmail = async appointment => {
 };
 
 exports.sendAdminAppointmentEmail = async appointment => {
-  const email = process.env.FROM_EMAIL
+  const email = process.env.FROM_EMAIL  
   const subject = `Appointment Reserved`
   const salutation = `Hello,`
   const content = `
@@ -30,10 +32,12 @@ exports.sendAdminAppointmentEmail = async appointment => {
       <li><strong>Name:</strong> ${appointment?.name}</li>
       <li><strong>Email:</strong> ${appointment?.email}</li>
       <li><strong>Service:</strong> ${appointment?.type}</li>
-      <li><strong>Date:</strong> ${appointment?.date?.toLocaleString()}</li>
+      <li><strong>Date:</strong> ${new Date(appointment?.date)?.toLocaleString()}</li>
   </ul>`;
   try {
-    await sendEmail({ email, subject, salutation, content });
+    const response = await sendEmail({ email, subject, salutation, content });
+    // console.log({response })
+    return [response]
   } catch (err) {
     console.log(err);
     throw new ErrorResponse(`Error Sending Appointment Mail: ${err.message}`, 500);
@@ -41,6 +45,11 @@ exports.sendAdminAppointmentEmail = async appointment => {
 };
 
 exports.sendAppointmentMails = async (appointment) => {
-  await this.sendUserAppointmentEmail(appointment);
-  await this.sendAdminAppointmentEmail(appointment);
+  // await this.sendUserAppointmentEmail(appointment);
+  // await this.sendAdminAppointmentEmail(appointment);
+  await Promise.all(
+    await this.sendUserAppointmentEmail(appointment),
+    await this.sendAdminAppointmentEmail(appointment)
+  )
+  return []
 }

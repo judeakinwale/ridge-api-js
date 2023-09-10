@@ -71,7 +71,7 @@ const sendEmail = async (options) => {
   <body>
       <div class="container">
           <div class="header">
-              ${app_logo_img}${app_logo}<h1>Ridge Dental</h1>
+              ${app_logo_img}${app_logo}<h1 style="padding-left: 1rem;">Ridge Dental</h1>
           </div>
           <div class="content">
               <h3>${options.salutation}</h3>
@@ -91,9 +91,10 @@ const sendEmail = async (options) => {
     text: options.message,
     html: html,
   };
-  console.log({message})
-const info= await transporter.sendMail(message);
-  console.log("Message sent: %s", info.messageId);
+  // console.log({message})
+  const info= await transporter.sendMail(message);
+  // console.log(`Message sent: ${info.messageId}`;
+  return `Message sent: ${info.messageId}`;
   
 }
 

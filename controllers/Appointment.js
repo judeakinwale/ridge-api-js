@@ -9,8 +9,13 @@ const { sendAppointmentMails } = require("../utils/appointmentUtils");
 // @route   POST  /api/v1/Appointment
 // @access   Public
 exports.createAppointment = asyncHandler(async (req, res, next) => {
-  const data = await Appointment.create(req.body);
-  await sendAppointmentMails(data);
+  // const data = await Appointment.create(req.body);
+  // await sendAppointmentMails(data);
+  await Promise.all(
+    await sendAppointmentMails(req.body),
+    await Appointment.create(req.body),
+  );
+  const data = req.body
   res.status(201).json({
     success: true,
     data,
