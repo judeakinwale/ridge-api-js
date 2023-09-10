@@ -9,8 +9,13 @@ const { sendFeedbackMails } = require("../utils/feedbackUtils");
 // @route   POST  /api/v1/Feedback
 // @access   Public
 exports.createFeedback = asyncHandler(async (req, res, next) => {
-  const data = await Feedback.create(req.body);
-  await sendFeedbackMails(data);
+  // const data = await Feedback.create(req.body);
+  // await sendFeedbackMails(data);
+  await Promise.all(
+    await sendFeedbackMails(data),
+    await Feedback.create(req.body),
+  )
+  const data = req.body
   res.status(201).json({
     success: true,
     data,

@@ -7,7 +7,9 @@ exports.sendUserFeedbackEmail = async feedback => {
   const salutation = `Hello ${feedback?.name},`
   const content = `<p>Thank you for your feedback.</p>`;
   try {
-    await sendEmail({ email, subject, salutation, content });
+    const response = await sendEmail({ email, subject, salutation, content });
+    console.log({response})
+    return [response]
   } catch (err) {
     console.log(err);
     throw new ErrorResponse(`Error Sending Feedback Mail: ${err.message}`, 500)
@@ -27,7 +29,9 @@ exports.sendAdminFeedbackEmail = async feedback => {
       <li><strong>Message:</strong> ${feedback?.message}</li>
   </ul>`;
   try {
-    await sendEmail({ email, subject, salutation, content });
+    const response = await sendEmail({ email, subject, salutation, content });
+    console.log({response})
+    return [response]
   } catch (err) {
     console.log(err);
     throw new ErrorResponse(`Error Sending Feedback Mail: ${err.message}`, 500);
@@ -35,6 +39,9 @@ exports.sendAdminFeedbackEmail = async feedback => {
 };
 
 exports.sendFeedbackMails = async (feedback) => {
-  await this.sendUserFeedbackEmail(feedback);
-  await this.sendAdminFeedbackEmail(feedback);
+  await Promise.all(
+    await this.sendUserFeedbackEmail(feedback),
+    await this.sendAdminFeedbackEmail(feedback),
+  )
+  return []
 }
