@@ -14,8 +14,8 @@ const router = express.Router();
 
 router.route("/").post(createFeedback);
 router.route("/").get(advancedResults(Feedback), getFeedbacks);
-router.route("/:id").get(getFeedback);
-router.route("/:id").patch(updateFeedback);
-router.route("/:id").delete(protect, deleteFeedback);
+// router.route("/:id").get(getFeedback);
+// router.route("/:id").patch(updateFeedback);
+// router.route("/:id").delete(protect, deleteFeedback);
 
 module.exports = router;

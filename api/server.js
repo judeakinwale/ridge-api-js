@@ -14,11 +14,11 @@ const cors = require("cors");
 const errorHandler = require("./middleware/error");
 const connectDB = require("./config/db");
 
-// Routes Files
-const auth = require("./routes/Auth");
-const user = require("./routes/User");
-const sms = require("./routes/SMS");
-const mail = require("./routes/Mail");
+// // Routes Files
+// const auth = require("./api/routes/Auth");
+// const user = require("./api/routes/User");
+// const sms = require("./api/routes/SMS");
+// const mail = require("./api/routes/Mail");
 const feedback = require("./routes/Feedback");
 const appointment = require("./routes/Appointment");
 
@@ -64,10 +64,10 @@ app.use(cors());
 
 //Mount Routers
 
-app.use("/api/v1/auth", auth);
-app.use("/api/v1/user", user);
-app.use("/api/v1/sms", sms);
-app.use("/api/v1/mail", mail);
+// app.use("/api/v1/auth", auth);
+// app.use("/api/v1/user", user);
+// app.use("/api/v1/sms", sms);
+// app.use("/api/v1/mail", mail);
 app.use("/api/v1/feedback", feedback);
 app.use("/api/v1/appointment", appointment);
 

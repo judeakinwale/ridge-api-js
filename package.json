@@ -4,8 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "NODE_ENV=production node server",
-    "dev": "nodemon server.js"
+    "start": "NODE_ENV=production node api/server.js",
+    "dev": "nodemon api/server.js"
   },
   "author": "LBAN",
   "license": "MIT",
