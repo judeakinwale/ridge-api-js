@@ -12,9 +12,9 @@ exports.createFeedback = asyncHandler(async (req, res, next) => {
   // const data = await Feedback.create(req.body);
   // await sendFeedbackMails(data);
   await Promise.all(
-    await sendFeedbackMails(data),
-    await Feedback.create(req.body),
-  )
+    await sendFeedbackMails(req.body),
+    await Feedback.create(req.body)
+  );
   const data = req.body
   res.status(201).json({
     success: true,
