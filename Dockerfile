@@ -17,4 +17,4 @@ COPY . .
 
 EXPOSE 8000 80
 
-CMD [ "node", "server.js" ]
+CMD [ "node", "index.js" ]
