@@ -65,11 +65,11 @@ app.use(cors());
 //Mount Routers
 
 app.use("/api/v1/auth", auth);
-app.use("/api/v1/user/", user);
-app.use("/api/v1/sms/", sms);
-app.use("/api/v1/mail/", mail);
-app.use("/api/v1/feedback/", feedback);
-app.use("/api/v1/appointment/", appointment);
+app.use("/api/v1/user", user);
+app.use("/api/v1/sms", sms);
+app.use("/api/v1/mail", mail);
+app.use("/api/v1/feedback", feedback);
+app.use("/api/v1/appointment", appointment);
 
 app.use(errorHandler);
 
