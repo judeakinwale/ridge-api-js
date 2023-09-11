@@ -13,7 +13,8 @@ const advancedResults = require("../middleware/advancedResults");
 const router = express.Router();
 
 router.route("/").post(createFeedback);
-router.route("/").get(advancedResults(Feedback), getFeedbacks);
+// router.route("/").get(advancedResults(Feedback), getFeedbacks);
+router.route("/").get(getFeedbacks);
 // router.route("/:id").get(getFeedback);
 // router.route("/:id").patch(updateFeedback);
 // router.route("/:id").delete(protect, deleteFeedback);

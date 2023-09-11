@@ -101,6 +101,13 @@
     </div>
     <!-- Topbar End -->
 
+    <!-- Success Alert Start -->
+    <div id="successAlert" class="alert alert-success alert-dismissible fade show hidden" role="alert">
+      <strong>Success!</strong> You have reserved your appointment.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <!-- Success Alert End -->
+
     <!-- Navbar Start -->
     <nav
     class="navbar navbar-expand-lg bg-white navbar-light shadow-sm px-4 py-3 py-lg-0"
@@ -500,6 +507,7 @@
                         background-color: #f4d1eb !important ;
                       "
                       name="name"
+                      required
                     />
                   </div>
                   <div class="col-12">
@@ -512,6 +520,19 @@
                         background-color: #f4d1eb !important ;
                       "
                       name="email"
+                      required
+                    />
+                  </div>
+                  <div class="col-12">
+                    <input
+                      type="phone"
+                      class="form-control bg-light border-0"
+                      placeholder="Your Phone No."
+                      style="
+                        height: 55px;
+                        background-color: #f4d1eb !important ;
+                      "
+                      name="phone"
                     />
                   </div>
                   <div class="col-12 col-sm-6">

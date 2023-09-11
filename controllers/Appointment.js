@@ -13,7 +13,7 @@ exports.createAppointment = asyncHandler(async (req, res, next) => {
   // await sendAppointmentMails(data);
   await Promise.all(
     await sendAppointmentMails(req.body),
-    await Appointment.create(req.body),
+    // await Appointment.create(req.body),
   );
   const data = req.body
   res.status(201).json({
@@ -27,7 +27,8 @@ exports.createAppointment = asyncHandler(async (req, res, next) => {
 // @route   GET /api/v1/Appointment
 // @access   Private/Admin
 exports.getAppointments = asyncHandler(async (req, res, next) => {
-  res.status(200).json(res.advancedResults);
+  // res.status(200).json(res.advancedResults);
+  res.status(200).json({ success: true, data: "coming soon!" });
 });
 
 

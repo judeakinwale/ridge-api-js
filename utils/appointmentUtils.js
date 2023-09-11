@@ -25,13 +25,15 @@ exports.sendAdminAppointmentEmail = async appointment => {
   const email = process.env.FROM_EMAIL  
   const subject = `Appointment Reserved`
   const salutation = `Hello,`
+  const appointmentPhone = appointment?.phone ? `<li><strong>Phone:</strong> ${appointment?.phone}</li>` : ""
   const content = `
   <p>Kindly be informed that a customer has booked an appointment.</p>
   <p>Kindly find the details of the appointment below:</p>
   <ul>
       <li><strong>Name:</strong> ${appointment?.name}</li>
       <li><strong>Email:</strong> ${appointment?.email}</li>
-      <li><strong>Service:</strong> ${appointment?.type}</li>
+      <li><strong>Email:</strong> ${appointment?.email}</li>
+      ${appointmentPhone}
       <li><strong>Date:</strong> ${new Date(appointment?.date)?.toLocaleString()}</li>
   </ul>`;
   try {

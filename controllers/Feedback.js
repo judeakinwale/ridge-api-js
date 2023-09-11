@@ -13,7 +13,7 @@ exports.createFeedback = asyncHandler(async (req, res, next) => {
   // await sendFeedbackMails(data);
   await Promise.all(
     await sendFeedbackMails(req.body),
-    await Feedback.create(req.body)
+    // await Feedback.create(req.body)
   );
   const data = req.body
   res.status(201).json({
@@ -27,7 +27,8 @@ exports.createFeedback = asyncHandler(async (req, res, next) => {
 // @route   GET /api/v1/Feedback
 // @access   Private/Admin
 exports.getFeedbacks = asyncHandler(async (req, res, next) => {
-  res.status(200).json(res.advancedResults);
+  // res.status(200).json(res.advancedResults);
+  res.status(200).json({success: true, data: "coming soon!",});
 });
 
 
