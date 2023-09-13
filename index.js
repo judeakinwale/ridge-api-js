@@ -6,8 +6,8 @@ const colors = require("colors");
 const fileupload = require("express-fileupload");
 const cookieParser = require("cookie-parser");
 const mongoSanitize = require("express-mongo-sanitize");
-// const helmet = require("helmet");
-// const xss = require("xss-clean");
+const helmet = require("helmet");
+const xss = require("xss-clean");
 const rateLimit = require("express-rate-limit");
 const hpp = require("hpp");
 const cors = require("cors");
@@ -44,10 +44,11 @@ app.use(fileupload());
 app.use(mongoSanitize());
 
 //set security headers
+app.use(helmet({ contentSecurityPolicy: false, crossOriginEmbedderPolicy: false }));
 // app.use(helmet());
 
 // Prevent XSS attacks
-// app.use(xss());
+app.use(xss());
 
 //Rate limiting
 const limiter = rateLimit({

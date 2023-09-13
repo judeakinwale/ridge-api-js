@@ -49,7 +49,7 @@ li {
 .video-container {
   height: 100vh;
   position: relative;
-  background-image: url("/img/carousel-1.JPG");
+  background-image: url("/img/carousel-1.jpg");
 
   overflow: hidden;
   @media (min-width: 600px) {
@@ -415,7 +415,7 @@ h6,
 
 .bg-offer-about {
   background: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgb(20, 20, 20)),
-    url(../img/about.JPG) center center no-repeat;
+    url(../img/about.jpg) center center no-repeat;
   background-size: cover;
 }
 
@@ -427,13 +427,13 @@ h6,
 
 .bg-offer-contact {
   background: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgb(44, 43, 43)),
-    url(../img/carousel-2.JPG) center no-repeat;
+    url(../img/carousel-2.jpg) center no-repeat;
   background-size: cover;
 }
 
 .contact_us {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgb(20, 20, 20)),
-    url(../img/about.JPG) center center no-repeat;
+    url(../img/about.jpg) center center no-repeat;
   background-size: cover;
 }
 
