@@ -1,5 +1,6 @@
 node_modules/
 config/.env
+frontend/
 *.env
 store.js
 build.zip

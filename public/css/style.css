@@ -27,9 +27,10 @@ li {
 }
 .team_card {
   background: linear-gradient(to top, rgb(20, 20, 20), rgba(41, 40, 40, 0.5)),
-    url(../img/bg_doctor.png) center no-repeat;
-  background-position: center center;
-  object-fit: cover;
+    url(../img/male.png) center no-repeat;
+  background-position: top center;
+  background-size: contain;
+  
   min-height: 320px;
   width: 100%;
   display: flex;
@@ -40,11 +41,23 @@ li {
   padding: 2%;
 }
 
-/********** Template CSS **********/
-/* *{
-    background-color: #A6448D;
-} */
-/* video */
+.team_fem {
+  background: linear-gradient(to top, rgb(20, 20, 20), rgba(41, 40, 40, 0.5)),
+    url(../img/female.png) center no-repeat;
+  background-position: top center;
+  background-size: contain;
+  
+  min-height: 320px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-radius: 5px;
+  color: white;
+  padding: 2%;
+}
+
+
 
 .video-container {
   height: 100vh;
@@ -229,6 +242,22 @@ h6,
 .btn-lg-square {
   width: 46px;
   height: 46px;
+}
+
+.appointment_btn {
+  padding: 8px 20px;
+  background-color: black;
+  color: white;
+  border-radius: 2px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 4px;
+
+}
+.appointment_btn:hover{
+  color:white;
+  background-color: #a6448d !important
+  
 }
 
 .btn-square,
@@ -488,8 +517,8 @@ h6,
 }
 
 .testimonial-carousel {
-  margin-top: 60%;
-  background: #8f3990;
+
+  color: #ffffff;
 }
 
 .testimonial-carousel .owl-nav {
@@ -527,6 +556,8 @@ h6,
   width: 120px;
   height: 120px;
 }
+
+
 
 @media screen and (max-width: 600px) {
   .callout h1 {
