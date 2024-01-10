@@ -2,15 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Rigde - Dental Clinic Website</title>
+    <title>Ridge - Dental</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="Ridge Dental" name="keywords" />
     <meta content="Dental" name="description" />
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="upgrade-insecure-requests"
+    />
 
     <!-- Favicon -->
     <link href="img/RD_logo 1.png" rel="icon" />
-
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -104,6 +106,22 @@
   </div>
     <!-- Topbar End -->
 
+    <!-- Success Alert Start -->
+    <div
+      id="successAlert"
+      class="alert alert-success alert-dismissible fade show hidden"
+      role="alert"
+    >
+      <strong>Success!</strong> You have reserved your appointment.
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+    <!-- Success Alert End -->
+
     <!-- Navbar Start -->
     <nav
     class="navbar navbar-expand-lg bg-white navbar-light shadow-sm px-4 py-3 py-lg-0"
@@ -128,7 +146,7 @@
         <div class="nav-item dropdown">
           <a
             href="service.html"
-            class="nav-link dropdown-toggle"
+            class="nav-link dropdown-toggle "
             data-bs-toggle="dropdown"
             >Services</a
           >
@@ -151,8 +169,8 @@
            
           </div>
         </div>
-        <a href="gallery.html" class="nav-item nav-link">Our Gallery</a>
-        <a href="contact.html" class="nav-item nav-link active">Contact Us</a>
+        <a href="gallery.html" class="nav-item nav-link active">Our Gallery</a>
+        <a href="contact.html" class="nav-item nav-link">Contact Us</a>
       </div>
      
       <a
@@ -164,13 +182,6 @@
     </div>
   </nav>
     <!-- Navbar End -->
-
-    <!-- Success Alert Start -->
-    <div id="successAlert" class="alert alert-success alert-dismissible fade show hidden" role="alert">
-      <strong>Thank You!</strong> We have received you feedback.
-      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-    <!-- Success Alert End -->
 
     <!-- Full Screen Search Start -->
     <div class="modal fade" id="searchModal" tabindex="-1">
@@ -205,165 +216,34 @@
 
     <!-- Hero Start -->
     <div
-      class="container-fluid bg-offer-contact pt-5 wow fadeInUp"
+      class="container-fluid bg-offer-service py-5 wow fadeInUp"
       data-wow-delay="0.1s"
     >
-      <div class="container py-2">
-        <div class="section-title mb-2 mt-5">
-          <!-- <h4
-        class="center position-relative d-inline-block  text-uppercase"
-        style="color: #000000 ;"
-      >
-        THE SMILE FACTORY - OUR SERVICES
-      </h4> -->
-          <h1 class="center display-5 mb-0" style="color: #ffffff">
-            Contact Us
+      <div class="container py-5">
+        <div class="section-title mb-5">
+          <h2
+            class="center position-relative d-inline-block text-uppercase"
+            style="color: #ffffff;font-size: 1.6rem;"
+          >
+            THE SMILE FACTORY 
+          </h2>
+
+          <h1 class="center display-5 mb-0" style="color: #ffffff; ">
+            Our Gallery
           </h1>
         </div>
-        <div class="row g-5 mt-1">
-          <div class="col-xl-6 col-lg-6 wow slideInUp" data-wow-delay="0.1s">
-            <div class="rounded h-100 p-5" style="color: white">
-              <div class="section-title">
-                <h5
-                  class="position-relative d-inline-block text-uppercase"
-                  style="color: white"
-                >
-                  Contact Us
-                </h5>
-                <h1 class="display-6 mb-4" style="color: white">
-                  Feel Free To Contact Us
-                </h1>
-              </div>
-              <div class="d-flex align-items-center mb-2">
-                <i class="bi bi-geo-alt fs-1 me-3" style="color: white"></i>
-                <div class="text-start">
-                  <h5 class="mb-0" style="color: white">Head Office</h5>
-                  <span
-                    >Matis Brass Mall, 27 Castlerock Avenue, Osapa London
-                    Lekki</span
-                  >
-                </div>
-              </div>
-              <div class="d-flex align-items-center mb-2">
-                <i
-                  class="bi bi-envelope-open fs-1 me-3"
-                  style="color: white"
-                ></i>
-                <div class="text-start">
-                  <h5 class="mb-0" style="color: white">Email Us</h5>
-                  <span>appointments@theridgedental.com</span>
-                </div>
-              </div>
-              <div class="d-flex align-items-center">
-                <i
-                  class="bi bi-phone-vibrate fs-1 me-3"
-                  style="color: white"
-                ></i>
-                <div class="text-start">
-                  <h5 class="mb-0" style="color: white">Call Us</h5>
-                  <span>+2349042312200</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-xl-6 col-lg-6 p-5 wow slideInUp"
-            data-wow-delay="0.3s"
-          >
-            <form id="feedbackForm1">
-              <div class="row g-3">
-                <div class="col-12">
-                  <input
-                    type="text"
-                    name="name"
-                      required
-                    class="form-control border-0 bg-light px-4"
-                    placeholder="Your Name"
-                    style="height: 55px; background-color: #f4d1eb !important "
-                  />
-                </div>
-                <div class="col-12">
-                  <input
-                    type="email"
-                    name="email"
-                      required
-                    class="form-control border-0 bg-light px-4"
-                    placeholder="Your Email"
-                    style="height: 55px; background-color: #f4d1eb !important "
-                  />
-                </div>
-                <div class="col-12">
-                  <input
-                    type="text"
-                    name="subject"
-                    class="form-control border-0 bg-light px-4"
-                    placeholder="Subject"
-                    style="height: 55px; background-color: #f4d1eb !important "
-                  />
-                </div>
-                <div class="col-12">
-                  <textarea
-                    class="form-control border-0 bg-light px-4 py-3"
-                    rows="5"
-                    placeholder="Message"
-                    name="message"
-                    style="background-color: #f4d1eb !important "
-                  ></textarea>
-                </div>
-                <div class="col-12">
-                  <button
-                    class="btn btn-primary w-100 py-3"
-                    type="submit"
-                    style="
-                      background-color: #8f3990;
-                      color: white;
-                      border: none;
-                    "
-                  >
-                    Send Message
-                  </button>
-                </div>
-              </div>
-            </form>
-          </div>
+      
+
+         
+          
         </div>
       </div>
     </div>
-    <!-- Hero End -->
+    <!-- Team End -->
 
-    
+   
 
-    <!-- map -->
-    <div class="container-fluid py-5">
-      <div class="container">
-        <div class="row g-5">
-          <div class="col-xl-6 col-lg-6 wow slideInUp" data-wow-delay="0.3s">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1982.29869136249!2d3.506588408173758!3d6.4457094640894095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf73154ad5305%3A0x376b932e237e2359!2sMatis%20Brass!5e0!3m2!1sen!2sng!4v1680610545854!5m2!1sen!2sng"
-              width="95%"
-              height="450"
-              style="border: 0"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </div>
-          <div class="col-xl-6 col-lg-6 wow slideInUp" data-wow-delay="0.1s">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.8768518056995!2d7.461812373924069!3d9.074982188269745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0b3662404805%3A0xee65786b1ea7c1f4!2sNana%20Plaza!5e0!3m2!1sen!2sng!4v1681657153453!5m2!1sen!2sng"
-              width="95%"
-              height="450"
-              style="border: 0"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- map end -->
+   
 
     <!-- Footer Start -->
     <div
@@ -460,7 +340,8 @@
     href="https://wa.link/cntdus" target="_blank"
     class="live-chat"
     style=" color: #fffff6"
-    ><img src="./img/wa_image.png" alt="whatsapp" style="height: 60px; width: 60px;" /></a>
+    ><img src="./img/wa_image.png" alt="whatsapp" style="height: 60px; width: 60px;" />
+  </a>
     <!-- Back to Top -->
     <a
       href="#"
@@ -486,44 +367,78 @@
     <script src="js/main.js"></script>
 
     <script>
-      document.getElementById('feedbackForm1').addEventListener('submit', function(event) {
-      event.preventDefault(); // Prevent the form from submitting normally
+      document
+        .getElementById("appointmentForm1")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent the form from submitting normally
 
-      document.getElementById('spinner').classList.add('show')
+          document.getElementById("spinner").classList.add("show");
 
-      // Get form data
-      const formData = new FormData(event.target);
-      
-      // Convert form data to JSON object
-      const formDataObject = {};
-      formData.forEach((value, key) => formDataObject[key] = value);
+          // Get form data
+          const formData = new FormData(event.target);
 
-      // Send POST request to the API
-      const apiUrl = 'https://ridge-api-js.vercel.app/api/v1/feedback/'; // Replace with your API URL
-      fetch(apiUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formDataObject),
-      })
-      .then(response => {
-        document.getElementById('spinner').classList.remove('show')
-        return response.json()
-      })
-      .then(data => {
-        document.getElementById('spinner').classList.remove('show')
-        document.getElementById('feedbackForm1').reset()
-        document.getElementById('successAlert').classList.remove('hidden')
-        window.scrollTo({ top: -10, behavior: 'smooth'});
-      })
-      .catch(error => {
-        document.getElementById('spinner').classList.remove('show')
-        console.error('Error:', error);
-        // Handle errors
-      });
-    });
+          // Convert form data to JSON object
+          const formDataObject = {};
+          formData.forEach((value, key) => (formDataObject[key] = value));
 
+          function fixDateAndTime(dateStr, timeStr) {
+            // Parse the date string
+            const [month, day, year] = dateStr.split("/").map(Number);
+
+            // Parse the time string
+            const [time, meridiem] = timeStr.split(" ");
+            const [hours, minutes] = time.split(":").map(Number);
+            const isPM = meridiem === "PM";
+
+            // Adjust hours for PM if needed
+            const adjustedHours = isPM && hours !== 12 ? hours + 12 : hours;
+
+            // Create the Date object
+            const combinedDate = new Date(
+              year,
+              month - 1,
+              day,
+              adjustedHours,
+              minutes
+            );
+
+            // console.log(combinedDate); // This will output the combined Date object
+            return combinedDate;
+          }
+
+          formDataObject.date = fixDateAndTime(
+            formDataObject?.date,
+            formDataObject?.time
+          );
+          formDataObject.time = undefined;
+
+          // Send POST request to the API
+          const apiUrl = "https://ridge-api-js.vercel.app/api/v1/appointment/"; // Replace with your API URL
+          fetch(apiUrl, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formDataObject),
+          })
+            .then((response) => {
+              document.getElementById("spinner").classList.remove("show");
+              return response.json();
+            })
+            .then((data) => {
+              document.getElementById("spinner").classList.remove("show");
+              document.getElementById("appointmentForm1").reset();
+              document
+                .getElementById("successAlert")
+                .classList.remove("hidden");
+              window.scrollTo({ top: -10, behavior: "smooth" });
+            })
+            .catch((error) => {
+              document.getElementById("spinner").classList.remove("show");
+              console.error("Error:", error);
+              // Handle errors
+            });
+        });
     </script>
   </body>
 </html>

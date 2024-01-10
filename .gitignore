@@ -4,3 +4,4 @@ frontend/
 *.env
 store.js
 build.zip
+frontend

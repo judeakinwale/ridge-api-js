@@ -13,7 +13,7 @@ exports.createAppointment = asyncHandler(async (req, res, next) => {
   // await sendAppointmentMails(data);
   await Promise.all(
     await sendAppointmentMails(req.body),
-    // await Appointment.create(req.body),
+    await Appointment.create(req.body),
   );
   const data = req.body
   res.status(201).json({

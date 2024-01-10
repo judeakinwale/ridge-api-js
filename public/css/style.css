@@ -13,6 +13,9 @@ h2 {
 h5 {
   font-family: "Manrope", sans-serif;
 }
+h4 {
+  font-family: "Manrope", sans-serif;
+}
 
 p {
   font-family: "Manrope", sans-serif;
@@ -107,6 +110,17 @@ video {
   z-index: 2;
   color: #ffffff;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.25), transparent);
+}
+
+.read-more-content {
+  overflow: hidden;
+  height: 120px; /* Adjust the height based on your preference */
+}
+
+/* Styling for the "Read More" button */
+.read-more-button {
+  cursor: pointer;
+  color:#a6448d;
 }
 
 .callout h1 {
@@ -289,6 +303,14 @@ h6,
   z-index: 99;
 }
 
+.live-chat {
+  position: fixed;
+  display: flex;
+  left: 45px;
+  bottom: 45px;
+  z-index: 99;
+}
+
 .top-shape::before {
   position: absolute;
   content: "";
@@ -301,7 +323,7 @@ h6,
 }
 
 .navbar-light .navbar-nav .nav-link {
-  font-family: "Jost", sans-serif;
+  font-family: "manrope", sans-serif;
   padding: 35px 15px;
   font-size: 18px;
   color: var(--dark);
