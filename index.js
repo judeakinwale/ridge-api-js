@@ -26,7 +26,7 @@ const appointment = require("./routes/Appointment");
 dotenv.config({ path: "./config/.env" });
 
 //connect to database
-// connectDB();
+connectDB();
 
 const app = express();
 

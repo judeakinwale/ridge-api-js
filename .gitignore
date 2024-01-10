@@ -3,3 +3,4 @@ config/.env
 *.env
 store.js
 build.zip
+frontend

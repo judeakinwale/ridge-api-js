@@ -2,6 +2,12 @@ const mongoose = require("mongoose");
 
 
 const Appointment = new mongoose.Schema({
+  firstname: {
+    type: String,
+  },
+  lastname: {
+    type: String,
+  },
   name: {
     type: String,
   },
@@ -15,6 +21,9 @@ const Appointment = new mongoose.Schema({
     type: String,
   },
   location: {
+    type: String,
+  },
+  message: {
     type: String,
   },
   date: {

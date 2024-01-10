@@ -13,7 +13,7 @@ exports.createFeedback = asyncHandler(async (req, res, next) => {
   // await sendFeedbackMails(data);
   await Promise.all(
     await sendFeedbackMails(req.body),
-    // await Feedback.create(req.body)
+    await Feedback.create(req.body)
   );
   const data = req.body
   res.status(201).json({
