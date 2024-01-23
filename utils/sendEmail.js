@@ -84,7 +84,8 @@ const sendEmail = async (options) => {
   const message = {
     // from: `${process.env.FROM_NAME}, <${process.env.FROM_EMAIL}>`, // sender address
     // '“Sender Name” sender@server.com',
-    from: `"${process.env.FROM_NAME}" ${process.env.FROM_EMAIL}`, // sender address
+    // from: `"${process.env.FROM_NAME}" ${process.env.FROM_EMAIL}`, // sender address
+    from: `"${process.env.FROM_NAME}" ${process.env.SMTP_EMAIL}`, // sender address
     to: options.email,
     cc: options.cc,
     subject: options.subject,
@@ -92,6 +93,7 @@ const sendEmail = async (options) => {
     html: html,
   };
   // console.log({message})
+  console.log({from: message.from})
   const info= await transporter.sendMail(message);
   // console.log(`Message sent: ${info.messageId}`;
   return `Message sent: ${info.messageId}`;

@@ -1,6 +1,7 @@
-const fs = require("fs")
+const fs = require("fs");
 const ErrorResponse = require("./errorResponse");
 const sendEmail = require("./sendEmail");
+const sendSMS = require("./sendSMS");
 
 exports.sendUserAppointmentEmail = async (appointment) => {
   const email = appointment?.email;
@@ -89,11 +90,47 @@ exports.sendAdminAppointmentEmail = async (appointment) => {
 };
 
 exports.sendAppointmentMails = async (appointment) => {
-  // await this.sendUserAppointmentEmail(appointment);
-  // await this.sendAdminAppointmentEmail(appointment);
+  // // await this.sendUserAppointmentEmail(appointment);
+  // // await this.sendAdminAppointmentEmail(appointment);
   await Promise.all(
     await this.sendUserAppointmentEmail(appointment),
     await this.sendAdminAppointmentEmail(appointment)
   );
   return [];
+};
+
+function convertPhoneNumber(phoneNumber) {
+  // Check if the phone number starts with '0'
+  if (phoneNumber.startsWith("0")) {
+    // Remove the leading '0' and add '234' to the beginning
+    return "234" + phoneNumber.slice(1);
+  } else {
+    // If the phone number doesn't start with '0', return as it is
+    return phoneNumber;
+  }
+}
+
+exports.sendAppointmentSMS = async (appointment) => {
+  const firstname = `${
+    appointment?.firstname || appointment?.name
+  }`.toUpperCase();
+  const datetime = new Date(appointment?.date);
+  const date = datetime?.toLocaleDateString();
+  const time = datetime?.toLocaleTimeString();
+
+  const to = [convertPhoneNumber(appointment?.phone)];
+  // const sms = `Hi ${firstname}. Your appointment at Ridge Dental Clinic is confirmed for ${date} at ${time}. Please arrive 10 minutes early. If you need to reschedule or cancel, kindly inform us at least 48 hours in advance. Thank you`;  // TODO: uncomment this
+  const sms = `Hi ${firstname}, Your appointment at Ridge Dental Clinic is confirmed for ${date} at ${time}. Thank you`;
+  try {
+    const response = await sendSMS(to, sms); // TODO: uncomment this
+    // const response = {to, sms}
+    console.log("sms test response", response.body);
+    return response;
+  } catch (err) {
+    console.log(`Error Sending Appointment SMS: ${err.message}`);
+    // throw new ErrorResponse(
+    //   `Error Sending Appointment SMS: ${err.message}`,
+    //   500
+    // );
+  }
 };

@@ -2,6 +2,7 @@ const path = require("path");
 const ErrorResponse = require("../utils/errorResponse");
 const asyncHandler = require("../middleware/async");
 const SMS = require("../models/SMS");
+const sendSMS = require("../utils/sendSMS");
 
 
 // @desc    Create SMS
@@ -9,6 +10,12 @@ const SMS = require("../models/SMS");
 // @access   Public
 exports.createSMS = asyncHandler(async (req, res, next) => {
   const data = await SMS.create(req.body);
+  try {
+    await sendSMS(req.body.to, req.body.message);
+  } catch (err) {
+    console.log(err);
+    throw new ErrorResponse(`Error Sending Generic Mail: ${err.message}`, 500);
+  }
   res.status(201).json({
     success: true,
     data,

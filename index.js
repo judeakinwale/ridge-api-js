@@ -17,7 +17,7 @@ const connectDB = require("./config/db");
 // // Routes Files
 // const auth = require("./api/routes/Auth");
 // const user = require("./api/routes/User");
-// const sms = require("./api/routes/SMS");
+// const sms = require("./routes/SMS");
 // const mail = require("./api/routes/Mail");
 const feedback = require("./routes/Feedback");
 const appointment = require("./routes/Appointment");

@@ -2,7 +2,7 @@ const path = require("path");
 const ErrorResponse = require("../utils/errorResponse");
 const asyncHandler = require("../middleware/async");
 const Appointment = require("../models/Appointment");
-const { sendAppointmentMails } = require("../utils/appointmentUtils");
+const { sendAppointmentMails, sendAppointmentSMS } = require("../utils/appointmentUtils");
 
 
 // @desc    Create Appointment
@@ -14,6 +14,7 @@ exports.createAppointment = asyncHandler(async (req, res, next) => {
   await Promise.all(
     await sendAppointmentMails(req.body),
     await Appointment.create(req.body),
+    await sendAppointmentSMS(req.body),
   );
   const data = req.body
   res.status(201).json({
